@@ -1,0 +1,21 @@
+{
+  "name": "solidus-api-sdk",
+  "version": "0.1.0",
+  "description": "JavaScript tool for use with your solidus api",
+  "repository": {
+    "url": "https://github.com/ccarruitero/solidus-api-sdk"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "César Carruitero",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
