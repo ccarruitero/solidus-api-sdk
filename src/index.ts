@@ -1,4 +1,5 @@
-import { Orders } from './orders';
+import Orders from './orders';
+import Products from './products';
 
 interface IClient {
   apiUrl: string,
@@ -7,8 +8,10 @@ interface IClient {
 
 export default class Client {
   public orders: Orders;
+  public products: Products;
 
   constructor({ apiUrl, authToken }: IClient) {
     this.orders = new Orders(apiUrl, authToken);
+    this.products = new Products(apiUrl, authToken);
   }
 }
