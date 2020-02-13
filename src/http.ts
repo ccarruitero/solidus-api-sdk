@@ -16,18 +16,17 @@ export default class Http {
     });
   }
 
-  public request({ url, method, body }: IRequest) {
-    fetch(url, {
+  public async request<T>({ url, method, body }: IRequest): Promise<T> {
+    const res = await fetch(url, {
       headers: this.headers,
       method: method || 'GET',
       body
     }).then((response: Response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        const { status, body } = response;
-        return { status, body };
+      if (!response.ok) {
+        throw new Error(response.statusText);
       }
-    }).catch((e: Error) => console.error(`Error: ${e}`)); 
+      return response.json();
+    }).catch((e: Error) => console.error(`Error: ${e}`));
+    return res;
   }
 }
