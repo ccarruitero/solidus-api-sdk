@@ -1,6 +1,12 @@
 import Orders from './orders';
 import Products from './products';
 
+export {
+  IOrderParams,
+  IOrder,
+  IOrderResult
+} from './types';
+
 interface IClient {
   apiUrl: string,
   authToken: string
