@@ -1,35 +1,36 @@
 import Http from './http';
+import { IOrderParams } from './types';
 
-interface IOrderParams {
-  coupon_code?: string,
-  email?: string,
-  special_instructions?: string,
-  use_billing?: boolean,
-  bill_address_attributes?: object,
-  ship_address_attributes?: object,
-  payments_attributes?: object,
-  shipments_attributes?: object,
-  line_items_attributes?: object
-}
+export default class Orders extends Http {
+  private baseUrl: string;
 
-export class Orders extends Http {
-  public async list(searchParams: string) {
-    const url = `${this.apiUrl}/api/orders?${searchParams}`;
+  constructor(apiUrl: string, authToken: string) {
+    super(apiUrl, authToken);
+    this.baseUrl = `${this.apiUrl}/api/orders`;
+  }
+
+  public async list<T>(searchParams: string): Promise<T> {
+    const url = `${this.baseUrl}${searchParams}`;
     return await this.request({ url });
   }
 
-  public async get(orderId: string) {
-    const url = `${this.apiUrl}/api/orders/${orderId}`;
+  public async mine<T>(searchParams: string): Promise<T> {
+    const url = `${this.baseUrl}/mine${searchParams}`;
     return await this.request({ url });
   }
 
-  public async create(orderParams: IOrderParams) {
-    const url = `${this.apiUrl}/api/orders`;
+  public async get<T>(orderId: string): Promise<T> {
+    const url = `${this.baseUrl}/${orderId}`;
+    return await this.request({ url });
+  }
+
+  public async create<T>(orderParams: IOrderParams): Promise<T> {
+    const url = this.baseUrl;
     return await this.request({ url, method: 'POST', body: JSON.stringify(orderParams) });
   }
 
-  public async updateOrder(orderParams: IOrderParams) {
-    const url = `${this.apiUrl}/api/orders`;
+  public async update<T>(orderParams: IOrderParams): Promise<T> {
+    const url = this.baseUrl;
     return await this.request({ url, method: 'PUT', body: JSON.stringify(orderParams) });
   }
 }
