@@ -1,5 +1,6 @@
 import Orders from './orders';
 import Products from './products';
+import Http from './http';
 
 export {
   IOrderParams,
@@ -11,6 +12,8 @@ interface IClient {
   apiUrl: string,
   authToken: string
 }
+
+export { Http };
 
 export default class Client {
   public orders: Orders;
