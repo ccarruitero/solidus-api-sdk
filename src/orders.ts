@@ -9,12 +9,12 @@ export default class Orders extends Http {
     this.baseUrl = `${this.apiUrl}/api/orders`;
   }
 
-  public async list<T>(searchParams: string): Promise<T> {
+  public async list<T>(searchParams: string = ''): Promise<T> {
     const url = `${this.baseUrl}${searchParams}`;
     return await this.request({ url });
   }
 
-  public async mine<T>(searchParams: string): Promise<T> {
+  public async mine<T>(searchParams: string = ''): Promise<T> {
     const url = `${this.baseUrl}/mine${searchParams}`;
     return await this.request({ url });
   }
