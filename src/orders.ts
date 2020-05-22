@@ -29,8 +29,8 @@ export default class Orders extends Http {
     return await this.request({ url, method: 'POST', body: JSON.stringify(orderParams) });
   }
 
-  public async update<T>(orderParams: IOrderParams): Promise<T> {
-    const url = this.baseUrl;
+  public async update<T>(orderId: string, orderParams: IOrderParams): Promise<T> {
+    const url = `${this.baseUrl}/${orderId}`;
     return await this.request({ url, method: 'PUT', body: JSON.stringify(orderParams) });
   }
 
