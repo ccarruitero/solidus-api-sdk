@@ -38,4 +38,9 @@ export default class Orders extends Http {
     const url = `${this.baseUrl}/current`;
     return await this.request({ url });
   }
+
+  public async empty<T>(orderId: string): Promise<T> {
+    const url = `${this.baseUrl}/${orderId}/empty`;
+    return await this.request({ url, method: 'PUT' });
+  }
 }
