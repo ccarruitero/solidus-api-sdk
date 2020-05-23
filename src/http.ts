@@ -1,7 +1,7 @@
-interface IRequest {
-  url: string,
-  method?: string,
-  body?: string
+interface Request {
+  url: string;
+  method?: string;
+  body?: string;
 }
 
 export default class Http {
@@ -16,7 +16,7 @@ export default class Http {
     });
   }
 
-  public async request<T>({ url, method, body }: IRequest): Promise<T> {
+  public async request<T>({ url, method, body }: Request): Promise<T> {
     const res = await fetch(url, {
       headers: this.headers,
       method: method || 'GET',

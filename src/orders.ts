@@ -1,5 +1,5 @@
 import Http from './http';
-import { IOrderParams } from './types';
+import { OrderParams } from './types';
 
 export default class Orders extends Http {
   private baseUrl: string;
@@ -9,12 +9,12 @@ export default class Orders extends Http {
     this.baseUrl = `${this.apiUrl}/api/orders`;
   }
 
-  public async list<T>(searchParams: string = ''): Promise<T> {
+  public async list<T>(searchParams = ''): Promise<T> {
     const url = `${this.baseUrl}${searchParams}`;
     return await this.request({ url });
   }
 
-  public async mine<T>(searchParams: string = ''): Promise<T> {
+  public async mine<T>(searchParams = ''): Promise<T> {
     const url = `${this.baseUrl}/mine${searchParams}`;
     return await this.request({ url });
   }
@@ -24,12 +24,12 @@ export default class Orders extends Http {
     return await this.request({ url });
   }
 
-  public async create<T>(orderParams: IOrderParams): Promise<T> {
+  public async create<T>(orderParams: OrderParams): Promise<T> {
     const url = this.baseUrl;
     return await this.request({ url, method: 'POST', body: JSON.stringify(orderParams) });
   }
 
-  public async update<T>(orderId: string, orderParams: IOrderParams): Promise<T> {
+  public async update<T>(orderId: string, orderParams: OrderParams): Promise<T> {
     const url = `${this.baseUrl}/${orderId}`;
     return await this.request({ url, method: 'PUT', body: JSON.stringify(orderParams) });
   }
