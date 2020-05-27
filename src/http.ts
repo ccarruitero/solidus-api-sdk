@@ -4,6 +4,8 @@ interface Request {
   body?: string;
 }
 
+global.Headers = global.Headers || require('fetch-headers');
+
 export default class Http {
   private headers: Headers;
   public apiUrl: string;
