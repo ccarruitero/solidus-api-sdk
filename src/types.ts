@@ -56,6 +56,10 @@ export interface OrderResult {
   user_id?: number;
 }
 
+export interface OrderListResult {
+  orders: OrderResult[]
+}
+
 export interface LineItemParams {
   quantity: number;
   options: object;

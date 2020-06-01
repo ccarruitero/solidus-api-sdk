@@ -15,7 +15,9 @@
   },
   "author": "César Carruitero",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
@@ -27,6 +29,7 @@
     "eslint-plugin-mocha": "^7.0.0",
     "fetch-headers": "^2.0.0",
     "mocha": "^7.1.2",
+    "node-fetch": "^2.6.0",
     "ts-node": "^8.10.1",
     "typescript": "^3.7.5"
   }

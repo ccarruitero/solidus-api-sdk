@@ -5,6 +5,7 @@ interface Request {
 }
 
 global.Headers = global.Headers || require('fetch-headers');
+global.fetch = global.fetch || require('node-fetch');
 
 export default class Http {
   private headers: Headers;
