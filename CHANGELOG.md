@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/ccarruitero/solidus-api-sdk/compare/v0.1.1...v0.1.2) (2020-06-01)
+
+
+### Bug Fixes
+
+* move fetch polyfills to dependencies ([636c9db](https://github.com/ccarruitero/solidus-api-sdk/commit/636c9dbe369767d7c0b6e9f587d66ebbe84316f8))
+
 ### 0.1.1 (2020-06-01)
 
 

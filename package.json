@@ -1,6 +1,6 @@
 {
   "name": "solidus-api-sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JavaScript tool for use with your solidus api",
   "repository": {
     "url": "https://github.com/ccarruitero/solidus-api-sdk"
