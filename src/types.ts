@@ -36,8 +36,8 @@ export interface OrderResult {
   id?: number;
   included_tax_total?: string;
   item_total?: string;
-  line_items?: object[];
-  number?: string;
+  line_items: LineItem[];
+  number: string;
   payment_method?: object[];
   payment_state?: string;
   payment_total?: string;
@@ -57,12 +57,16 @@ export interface OrderResult {
 }
 
 export interface OrderListResult {
-  orders: OrderResult[]
+  orders: OrderResult[];
+}
+
+export interface LineItem {
+  quantity: number;
+  options?: object;
+  id?: number;
+  variant_id: number;
 }
 
 export interface LineItemParams {
-  quantity: number;
-  options: object;
-  id: number;
-  variant_id: number;
+  line_item: LineItem;
 }
